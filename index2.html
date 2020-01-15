@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Webview For Testing <button id="clickMe">Click me</button></div>
+    <p id="demo">demo</p>
+    <div id="text_get"></div>
+    <input type="file" />
+
+    <script>
+      alert("something");
+     
+
+    //   const clickme = () => {
+    //     alert("click me");
+    //     window.postMessage("Sending data from WebView");
+    //   };
+      document.addEventListener(
+        "message",
+        function(event) {
+            document.getElementById("demo").innerHTML = "Paragraph changed!";
+            var div = document.getElementById('text_get')
+
+            div.innerHTML += "message received from phone"
+         },
+        false
+      );
+
+    //   document.getElementById("clickMe").onclick = clickme;
+
+    </script>
+  </body>
+</html>
